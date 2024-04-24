@@ -26,6 +26,8 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -170,7 +172,7 @@
                 <li><strong>Project date</strong>: 01 March, 2020</li>
                 <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
               </ul>
-              <button id="buyTicketBtn">Buy Ticket</button>
+              <button id="click">Buy Ticket</button>
             </div>
             <div class="portfolio-description">
               <h2>Event Details</h2>
@@ -251,6 +253,24 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script type="text/javascript">
+    $('#click').on('click', function(){
+      Swal.fire({
+      title: "Do you want to booking the ticket?",
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: "Yes",
+      denyButtonText: `No`
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          Swal.fire("Ticket booked successfully!", "", "success");
+        } else if (result.isDenied) {
+          Swal.fire("No worries, there's always next time", "", "info");
+        }
+      });
+    })
+  </script>
 
 </body>
 

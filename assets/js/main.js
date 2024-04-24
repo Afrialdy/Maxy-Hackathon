@@ -149,16 +149,6 @@
   });
 
   /**
-   * Preloader
-   */
-  let preloader = select('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove()
-    });
-  }
-
-  /**
    * Initiate  glightbox 
    */
   const glightbox = GLightbox({
@@ -253,8 +243,10 @@
 const showPopupBtn = document.querySelector(".login-btn");
 const formPopup = document.querySelector(".form-popup");
 const hidePopupBtn = document.querySelector(".form-popup .close-btn");
+
 const loginSignupLink = document.querySelectorAll(".form-box .bottom-link a");
 const buyTicketBtn = document.getElementById("buyTicketBtn");
+const buyTicketBtn2 = document.getElementById("buyTicketBtn2");
 
 /* Show form Popup */
 showPopupBtn.addEventListener("click", () => {
@@ -272,5 +264,9 @@ loginSignupLink.forEach(link => {
 })
 
 buyTicketBtn.addEventListener("click", () => {
+  document.body.classList.add("show-popup");
+});
+
+buyTicketBtn2.addEventListener("click", () => {
   document.body.classList.add("show-popup");
 });

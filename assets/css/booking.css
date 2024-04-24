@@ -1,0 +1,208 @@
+.blur-bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  transition: 0.1s ease;
+  -webkit-transition: 0.1s ease;
+  -moz-transition: 0.1s ease;
+  -ms-transition: 0.1s ease;
+  -o-transition: 0.1s ease;
+}
+
+.show-popup .blur-bg-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.booking-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 720px;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  background: #fff;
+  border: 2px solid #fff;
+  transform: translate(-50%, -100%);
+  -webkit-transform: translate(-50%, -100%);
+  -moz-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  -o-transform: translate(-50%, -100%);
+  z-index: 10000;
+}
+
+.show-popup .booking-popup {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease, opacity 0.1s;
+  -webkit-transition: transform 0.3s ease, opacity 0.1s;
+  -moz-transition: transform 0.3s ease, opacity 0.1s;
+  -ms-transition: transform 0.3s ease, opacity 0.1s;
+  -o-transition: transform 0.3s ease, opacity 0.1s;
+}
+
+.booking-popup .closed-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+}
+
+.booking-popup .booking-box {
+  display: flex;
+}
+
+.booking-box .booking-details {
+  max-width: 330px;
+  width: 100%;
+  display: flex;
+  padding: 0 20px;
+  color: #ffffff;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(../img/register.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.booking-box h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.booking-box .booking-content {
+  width: 100%;
+  padding: 35px;
+}
+
+form .input-field {
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+
+form .input-field input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 0 15px;
+  font-size: 0.95rem;
+  border-radius: 3px;
+  border: 1px solid #717171;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.input-field input:focus {
+  border-color: #00bcd4;
+}
+
+.input-field input:is(:focus, :valid) {
+  padding: 16px 15px 0;
+}
+
+form .input-field label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  color: #717171;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: 0.2s ease;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ label {
+  color: #00bcd4;
+  font-size: 0.75rem;
+  transform: translateY(-120%);
+  -webkit-transform: translateY(-120%);
+  -moz-transform: translateY(-120%);
+  -ms-transform: translateY(-120%);
+  -o-transform: translateY(-120%);
+}
+
+.booking-box a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+.booking-box a:hover {
+  text-decoration: underline;
+}
+
+.booking-box .forgot-pass {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 0.95rem;
+}
+
+form button {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 14px 0;
+  border-radius: 3px;
+  margin: 25px 0;
+  color: #fff;
+  cursor: pointer;
+  background: #00bcd4;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  transition: 0.2s ease;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+}
+
+form button:hover {
+  background: #00a0b5;
+}
+
+.booking-box .bottom-link {
+  text-align: center;
+}
+
+.booking-popup .signup,
+.booking-popup.show-signup .login {
+  display: none;
+}
+
+.booking-popup.show-signup .signup {
+  display: flex;
+}
+
+@media (max-width: 760px) {
+  .booking-popup {
+    width: 96%;
+  }
+
+  .booking-box .booking-details {
+    display: none;
+  }
+
+  .booking-box .booking-content {
+    padding: 30px 20px;
+  }
+}

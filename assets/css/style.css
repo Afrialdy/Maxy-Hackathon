@@ -405,6 +405,38 @@ form .input-field label {
   font-size: 0.95rem;
 }
 
+.login-link.hidden {
+  display: none;
+  font-weight: 600;
+}
+
+.loginn {
+  display: none;
+}
+
+.form-box .login-link.hidden {
+  text-decoration: none;
+}
+
+.loginn + .login-link {
+  display: inline-block;
+  padding: 14px 0;
+  border-radius: 3px;
+  margin: 25px 0;
+  color: #fff;
+  cursor: pointer;
+  background: #00bcd4;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Efek hover untuk tautan Log In */
+.loginn + .login-link:hover {
+  background: #00a0b5;
+}
+
 form button {
   width: 100%;
   outline: none;
@@ -1002,6 +1034,10 @@ section {
   overflow: hidden;
   width: 180px;
   border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 .team .member .pic img {
